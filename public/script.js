@@ -3,7 +3,6 @@ function fetchAndPrintData() {
   fetch('/api/data')
     .then(data => data.json())
     .then(json => {
-      console.log(json)
       document.getElementById('out').textContent = JSON.stringify(json)
     } );
 }
@@ -24,7 +23,7 @@ function submitForm() {
   })
   .then(() => {
     console.log(JSON.stringify({ title, description }))
-    // fetchAndPrintData()
+    fetchAndPrintData()
   });
 
 }
