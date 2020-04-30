@@ -18,5 +18,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theFl00f/2020-04-30-juno-careerhack-week-day-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theFl00f/2020-04-30-juno-careerhack-week-day-1/issues"
+  },
+  "homepage": "https://github.com/theFl00f/2020-04-30-juno-careerhack-week-day-1#readme"
 }
