@@ -1,14 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+
+// configures environment variables into the dotenv file
 require('dotenv').config();
 
+// may not need this, apperently is not needed in new versions of express
 const bodyParser = require('body-parser');
 // const DataService = require('./services/data-service');
 
 // Create the server app
 const app = express();
 
+// middleware: cors and parse json
 app.use(cors());
 app.use(express.json());
 // register the ./public folder as the static assets directory
@@ -47,8 +51,16 @@ app.post('/api/data', (req, res) => {
   res.json(dataService.create(req.body));
 });
 
+// require route files 
+const commentRouter = require('./routes/comments');
+const userRouter = require('./routes/users');
 
-// Start the application
+// use route files 
+app.use('/comments', commentRouter);
+app.use('/users', userRouter);
+
+
+// what starts the server on indicated port
 const listener = app.listen(3000, () => {
   // get the port from the listener.
   const port = listener.address().port;
