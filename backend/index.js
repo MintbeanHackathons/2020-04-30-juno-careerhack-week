@@ -7,7 +7,6 @@ require('dotenv').config();
 
 // may not need this, apperently is not needed in new versions of express
 const bodyParser = require('body-parser');
-// const DataService = require('./services/data-service');
 
 // Create the server app
 const app = express();
@@ -26,29 +25,6 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB connection success");
-});
-
-// This dataService currently contains the data.
-// You will be hooking it up to Mongo as part of your assignment.
-// const dataService = new DataService();
-
-
-// =========== API ROUTES ===========
-
-// List all the data.
-// GET /api/data
-app.get('/api/data', (req, res) => {
-  res.json(dataService.all());
-});
-
-// Save a data object
-// POST /api/data
-// SAMPLE PAYLOAD: { title: "Your title goes here", description: "Your description goes here" }
-app.post('/api/data', (req, res) => {
-  // TODO:
-  // 1. Validate the existence of 'title'
-  // 2. Validate the existence of 'description'
-  res.json(dataService.create(req.body));
 });
 
 // require route files 
