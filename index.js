@@ -20,18 +20,22 @@ const dataService = new DataService();
 
 // List all the data.
 // GET /api/data
-app.get('/api/data', (req, res) => {
-  res.json(dataService.all());
+app.get('/api/data', async (req, res) => {
+  // TODO: try/catch
+  const list = await dataService.all();
+  res.json(list);
 });
 
 // Save a data object
 // POST /api/data
 // SAMPLE PAYLOAD: { title: "Your title goes here", description: "Your description goes here" }
-app.post('/api/data', (req, res) => {
+app.post('/api/data', async (req, res) => {
   // TODO:
   // 1. Validate the existence of 'title'
   // 2. Validate the existence of 'description'
-  res.json(dataService.create(req.body));
+  // 3. try/catch
+  const newObj = await dataService.create(req.body);
+  res.json(newObj);
 });
 
 
