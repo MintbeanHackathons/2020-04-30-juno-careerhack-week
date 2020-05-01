@@ -1,6 +1,49 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const DataService = require('./services/data-service');
+const mongoose = require('mongoose')
+const url = 'mongodb://127.0.0.1:27017/mintbean'
+
+
+//connect to the mongoDB
+
+mongoose.connect(url, { useNewUrlParser: true })
+
+
+const db = mongoose.connection
+
+//check if connection succeeds
+db.once('open', _ => {
+  console.log('Database connected: ', url)
+})
+
+db.on('error', err => {
+  console.error('Connection error: ', err)
+})
+
+//define a schema
+
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  username: 'string',
+  password: 'string',
+  comments: 'string'
+});
+
+//compile a model
+
+const User = mongoose.model('User', userSchema);
+
+User.create({
+  username: 'alex',
+  password: 'password'
+}, function(err, alex) {
+  if (err) return handleError(err);
+})
+
+
+
 
 // Create the server app
 const app = express();
@@ -21,10 +64,12 @@ const dataService = new DataService();
 // List all the data.
 // GET /api/data
 app.get('/api/data', async (req, res) => {
-  // TODO: try/catch
-  const list = await dataService.all();
+  const list = await dataService.all()
   res.json(list);
 });
+
+
+
 
 // Save a data object
 // POST /api/data
@@ -33,14 +78,13 @@ app.post('/api/data', async (req, res) => {
   // TODO:
   // 1. Validate the existence of 'title'
   // 2. Validate the existence of 'description'
-  // 3. try/catch
-  const newObj = await dataService.create(req.body);
+  const newObj = await dataService.create(req.body)
   res.json(newObj);
 });
 
 
 // Start the application
-const listener = app.listen(3000, () => {
+const listener = app.listen(process.env.PORT || 3000, () => {
   // get the port from the listener.
   const port = listener.address().port;
 

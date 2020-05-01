@@ -2,7 +2,9 @@
 function fetchAndPrintData() {
   fetch('/api/data')
     .then(data => data.json())
-    .then(json => document.getElementById('out').textContent = JSON.stringify(json) );
+    .then(json => {
+      document.getElementById('out').textContent = JSON.stringify(json)
+    } );
 }
 
 // Submits the form and refreshes the data
@@ -19,7 +21,10 @@ function submitForm() {
     },
     body: JSON.stringify({ title, description })
   })
-  .then(() => fetchAndPrintData());
+  .then(() => {
+    console.log(JSON.stringify({ title, description }))
+    fetchAndPrintData()
+  });
 
 }
 

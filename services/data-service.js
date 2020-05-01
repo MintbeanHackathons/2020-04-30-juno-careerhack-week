@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 
+
 // A service that performs create/read/update/delete functions on data.
 module.exports = class DataService {
   // Data that is being saved inside the instance of this class.
@@ -9,7 +10,7 @@ module.exports = class DataService {
       title: "Sample title",
       body: "This is the body of the current snippet of code."
     }
-  }
+  };
 
   // Gets a list of all the objects
   all() {
@@ -26,10 +27,7 @@ module.exports = class DataService {
       description
     };
 
-    console.log(object);
-
     this.data[id] = (object);
-
     return Promise.resolve(object);
   }
 
@@ -53,4 +51,6 @@ module.exports = class DataService {
 
   //   return Promise.resolve(null);
   // }
+
+
 }
