@@ -51,6 +51,14 @@ app.post('/api/data', (req, res) => {
   res.json(dataService.create(req.body));
 });
 
+// require route files 
+const commentRouter = require('./routes/comments');
+const userRouter = require('./routes/users');
+
+// use route files 
+app.use('/comments', commentRouter);
+app.use('/users', userRouter);
+
 
 // what starts the server on indicated port
 const listener = app.listen(3000, () => {
