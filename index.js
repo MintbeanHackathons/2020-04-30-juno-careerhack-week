@@ -1,21 +1,49 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const DataService = require('./services/data-service');
-const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://127.0.0.1:27017';
-const dbName = 'day1';
-const uri = "mongodb+srv://mintbean:hackathon@cluster0-knglh.mongodb.net/test";
-let db;
+const mongoose = require('mongoose')
+const url = 'mongodb://127.0.0.1:27017/mintbean'
+
 
 //connect to the mongoDB
 
-MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-  if (err) return console.log(err);
-  //storing a reference to the database so it can be used later
-  db = client.db(dbName);
-  console.log(`Connected MongoDB: ${url}`);
-  console.log(`Database: ${dbName}`)
+mongoose.connect(url, { useNewUrlParser: true })
+
+
+const db = mongoose.connection
+
+//check if connection succeeds
+db.once('open', _ => {
+  console.log('Database connected: ', url)
 })
+
+db.on('error', err => {
+  console.error('Connection error: ', err)
+})
+
+//define a schema
+
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  username: 'string',
+  password: 'string',
+  comments: 'string'
+});
+
+//compile a model
+
+const User = mongoose.model('User', userSchema);
+
+User.create({
+  username: 'alex',
+  password: 'password'
+}, function(err, alex) {
+  if (err) return handleError(err);
+})
+
+
+
 
 // Create the server app
 const app = express();
