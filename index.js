@@ -1,6 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const DataService = require('./services/data-service');
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://127.0.0.1:27017';
+const dbName = 'day1';
+const uri = "mongodb+srv://mintbean:hackathon@cluster0-knglh.mongodb.net/test";
+let db;
+
+//connect to the mongoDB
+
+MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+  if (err) return console.log(err);
+  //storing a reference to the database so it can be used later
+  db = client.db(dbName);
+  console.log(`Connected MongoDB: ${url}`);
+  console.log(`Database: ${dbName}`)
+})
 
 // Create the server app
 const app = express();
@@ -24,6 +39,9 @@ app.get('/api/data', async (req, res) => {
   const list = await dataService.all()
   res.json(list);
 });
+
+
+
 
 // Save a data object
 // POST /api/data
