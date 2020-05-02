@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
   render() {
@@ -6,11 +7,19 @@ class Nav extends Component {
       <div className="navigation">
         <h3>Navigation Component</h3>
         <nav>
-          <h1>SHLC News</h1>
           <ul>
-            <li>articles</li>
-            <li>submit</li>
-            <li>login</li>
+            <li>
+              <NavLink to="/" exact>SHLC News</NavLink>
+            </li>
+            <li>
+              <NavLink to="/thread">articles</NavLink>
+            </li>
+            <li>
+              <NavLink to="/submit">submit</NavLink>
+            </li>
+            <li>
+              <NavLink to="/login">login</NavLink>
+            </li>
           </ul>
         </nav>
       </div>
