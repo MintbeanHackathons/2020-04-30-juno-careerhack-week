@@ -3,6 +3,7 @@ import Comment from './components/Comment';
 import Submit from './components/Submit';
 import Nav from './components/Nav';
 import Thread from './components/Thread';
+import Login from './components/Login';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,8 @@ class App extends Component {
         <Comment />
 
         <Thread />
+
+        <Login />
 
       </div>
     );
