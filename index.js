@@ -35,13 +35,23 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', userSchema);
 
+
+//POST
 User.create({
-  username: 'alex',
+  username: 'jamie',
   password: 'password'
 }, function(err, alex) {
   if (err) return handleError(err);
 })
 
+//GET
+User.find({}).then(res => {
+  console.log(res);
+}).catch((err) => {
+  console.log(err);
+});
+
+//
 
 
 
