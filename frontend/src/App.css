@@ -20,3 +20,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .navigation li a {
   text-decoration: none;
 }
+
+/* submit styling */
+
+.submit form {
+  display: flex;
+  flex-direction: column;
+}
