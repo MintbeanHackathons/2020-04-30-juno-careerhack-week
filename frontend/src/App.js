@@ -1,56 +1,22 @@
 import React, { Component } from 'react';
+import Comment from './components/Comment';
+import Submit from './components/Submit';
+import Nav from './components/Nav';
+import Thread from './components/Thread';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <nav>
-            <h1>SHLC News</h1>
-            <ul>
-              <li>articles</li>
-              <li>submit</li>
-              <li>login</li>
-            </ul>
-          </nav>
-        </header>
+        <Nav />
+    
+        <Submit />
 
-        <section className="submit">
-          {/* this section will not have full header */}
-          <h1>Submit</h1>
-          <form>
-            <label htmlFor="title">title</label>
-            <input type="text" name="title" id="title"/>
-            <label htmlFor="url">url</label>
-            <input type="text" name="url" id="url"/>
-            <label htmlFor="text">text</label>
-            <input type="textarea" name="text" id="text"/>
-            <input type="submit" name="submit" id="submit"/>
-          </form>
-          <p>Leave url blank to submit a question for discussion.</p>
-        </section>
+        <Comment />
 
-        <section className="questions-thread">
-          {/* this section will have full header and can use same component in articles-thread*/}
-          <ol>
-            <li>user question will appear here, on click will bring you to question page</li>
-          </ol>
-        </section>
+        <Thread />
 
-        <section className="question-discussion">
-          <h2>user question is listed here</h2>
-          <input type="textarea" name="comment" id="comment"/>
-          <button>add comment</button>
-          <p>comment from user number 1</p>
-          <p>comment from user number 2</p>
-        </section>
-
-        <section className="articles-thread">
-          <ol>
-            <li>title submitted by the user will display here, on click will bring you to url given by user</li>
-          </ol>
-        </section>
       </div>
     );
   }
