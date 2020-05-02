@@ -5,11 +5,10 @@ class Nav extends Component {
   render() {
     return (
       <div className="navigation">
-        <h3>Navigation Component</h3>
         <nav>
           <ul>
             <li>
-              <NavLink to="/" exact>SHLC News</NavLink>
+              <NavLink to="/" exact>SHLC News (home)</NavLink>
             </li>
             <li>
               <NavLink to="/thread">articles</NavLink>
