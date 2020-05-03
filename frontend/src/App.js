@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Comment from './components/Comment';
+import Submit from './components/Submit';
+import Thread from './components/Thread';
+import Login from './components/Login';
 import './App.css';
+import NavBar from "./components/NavBar";
+import { Router, Route, Switch } from "react-router-dom";
+import Profile from "./components/Profile";
+import history from "./utils/history";
+import PrivateRoute from "./components/PrivateRoute";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router basename="/" history={history}>
+        <div className="App">
+          <NavBar />
+          
+          <Switch>
+            <Route path="/" exact />
+            <PrivateRoute path="/profile" component={Profile} />
+          </Switch>
+
+          <Route
+            path="/submit"
+            render={() => (
+              <Submit />
+            )}
+          />
+          <Route
+            path="/login"
+            render={() => (
+              <Login />
+            )}
+          />
+          <Route
+            path="/thread"
+            render={() => (
+              <Thread />
+            )}
+          />
+          <Comment />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
