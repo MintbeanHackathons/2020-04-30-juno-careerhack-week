@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Submit from './Submit';
 
-class Comment extends Component {
+class CommentAdd extends Component {
 
   constructor(props){
     super(props);
@@ -88,4 +87,4 @@ class Comment extends Component {
   }
 }
 
-export default Comment;
+export default CommentAdd;
