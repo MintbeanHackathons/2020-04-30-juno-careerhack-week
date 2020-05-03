@@ -8,15 +8,51 @@ const articleSchema = new Schema({
         required: true,
         unique: true,
         trim: true,
-        minlength: 3
+        minlength: 1
     },
-    title: "‘Breathable’ Electronics Pave the Way for More Functional Wearable Tech",
-    author: "Yong Zhu (yzhu7@ncsu.edu) & Matt Shipman (matt_shipman@ncsu.edu)",
-    contentURL: "https://news.ncsu.edu/2020/04/breathable-electronics/",
+    title: {
+        type: string,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 1
+    },
+    author: {
+        type: string,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 1
+    },
+    contentURL: {
+        type: string,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 1
+    },
     comments: {
-        userName: "",
-        date: "",
-        comment: ""
+        userName: {
+            type: string,
+            required: true,
+            unique: true,
+            trim: true,
+            minlength: 3
+        },
+        date: {
+            type: number,
+            required: true,
+            unique: true,
+            trim: true,
+            minlength: 3
+        },
+        comment: {
+            type: string,
+            required: true,
+            unique: true,
+            trim: true,
+            minlength: 3
+        }
     },
 }, {
     timestamps: true,
