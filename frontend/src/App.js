@@ -42,8 +42,11 @@ class App extends Component {
               <Thread />
             )}
           />
+          
           <CommentAdd />
-          <CommentView />
+          <Route path="/" component = {CommentView} />
+          <Route path="/edit/:id" component={CommentEdit} />
+
         </div>
       </Router>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 import axios from 'axios';
 
 const Comment = props => {
@@ -8,15 +8,9 @@ const Comment = props => {
         <td>{props.comment.username}</td>
         <td>{props.comment.comment}</td>
         <td>
-          <Link to={"/edit/" + props.comment._id}>edit</Link> |{" "}
-          <a
-            href="#"
-            onClick={() => {
-              props.deleteComment(props.comment._id);
-            }}
-          >
-            delete
-          </a>
+            <Link to={"/edit/" + props.comment._id}>edit</Link> | <button onClick={() => { props.deleteComment(props.comment._id); }}>
+              delete
+          </button>
         </td>
       </tr>
     );   
@@ -25,14 +19,16 @@ const Comment = props => {
 class CommentView extends Component {
 
     constructor(props){
-        super();
+        super(props);
 
-        this.state = {comments: []}
+        this.state = {
+          comments: []
+        }
     }
 
     componentDidMount(){
         axios
-          .get("http://localhost5000/comments/")
+          .get("http://localhost:5000/comments/")
           .then((response) => {
             this.setState({ comments: response.data });
           })
@@ -46,10 +42,11 @@ class CommentView extends Component {
         .then(res => console.log(res.data));
 
         this.setState({
-            comments: this.state.comments.filter(el => el._id != id)
+          comments: this.state.comments.filter(el => el._id !== id)
         })
     }
 
+    // for every element in the comments array return a component ( a row of the table)
     commentList(){
         return this.state.comments.map(currentComment => {
             return <Comment comment={currentComment} deleteComment={this.deleteComment} key={currentComment._id}/>;
