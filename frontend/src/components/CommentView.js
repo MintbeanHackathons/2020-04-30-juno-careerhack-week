@@ -62,8 +62,8 @@ class CommentView extends Component {
             <table className="table">
               <thread>
                 <tr>
-                  <th>username</th>
-                  <th>comment</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thread>
             </table>
