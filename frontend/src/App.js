@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route } from "react-router-dom";
 import Comment from './components/Comment';
 import Submit from './components/Submit';
 import Nav from './components/Nav';
 import Thread from './components/Thread';
 import Login from './components/Login';
 import './App.css';
+import NavBar from "./components/NavBar";
+import { useAuth0 } from "./react-auth0-spa";
+import { Router, Route, Switch } from "react-router-dom";
+import Profile from "./components/Profile";
+import history from "./utils/history";
+import PrivateRoute from "./components/PrivateRoute";
 
 class App extends Component {
   render() {
     return (
-      <Router basename="/">
+      <Router basename="/" history={history}>
         <div className="App">
+          <NavBar />
+          
+          <Switch>
+            <Route path="/" exact />
+            <PrivateRoute path="/profile" component={Profile} />
+          </Switch>
+
           <Nav />
-          <Route 
+
+          <Route
             path="/submit"
             render={() => (
               <Submit />
             )}
           />
-          <Route 
+          <Route
             path="/login"
             render={() => (
               <Login />
