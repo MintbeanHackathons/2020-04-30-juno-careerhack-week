@@ -58,6 +58,9 @@ class CommentEdit extends Component {
     axios
       .post("http://localhost:5000/comments/update/"+this.props.match.params.id, userComment)
       .then((res) => console.log(res.data));
+
+    window.location = '/'
+
   };
 
   render() {

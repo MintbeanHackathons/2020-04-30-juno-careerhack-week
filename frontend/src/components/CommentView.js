@@ -8,9 +8,9 @@ const Comment = props => {
         <td>{props.comment.username}</td>
         <td>{props.comment.comment}</td>
         <td>
-            <Link to={"/edit/" + props.comment._id}>edit</Link> | <a href="#" onClick={() => { props.deleteComment(props.comment._id); }}>
+            <Link to={"/edit/" + props.comment._id}>edit</Link> | <button onClick={() => { props.deleteComment(props.comment._id); }}>
               delete
-          </a>
+          </button>
         </td>
       </tr>
     );   
