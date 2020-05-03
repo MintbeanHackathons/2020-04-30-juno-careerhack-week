@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-
-class Comment extends Component {
-  render() {
-    return (
-      <div className="comment">
-        <h3>Comment Component</h3>
-        <input type="textarea" name="comment" id="comment" />
-        <button>add comment</button>
-=======
 import axios from 'axios';
-import Submit from './Submit';
 
-class Comment extends Component {
+class CommentAdd extends Component {
 
   constructor(props){
     super(props);
@@ -93,10 +82,9 @@ class Comment extends Component {
             <button type="submit">add comment</button>
         </form>
         
->>>>>>> origin
       </div>
     ); 
   }
 }
 
-export default Comment;
+export default CommentAdd;
