@@ -4,7 +4,7 @@ import axios from "axios";
 class CommentEdit extends Component {
   constructor(props) {
     super(props);
-
+    console.log('commentEdit this.props', this.props);
     this.state = {
       username: "",
       comment: "",
