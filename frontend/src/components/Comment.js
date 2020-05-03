@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import Submit from './Submit';
 
 class Comment extends Component {
 
@@ -13,9 +15,15 @@ class Comment extends Component {
   }
 
   componentDidMount(){
-    this.setState({
-      users: ['test user'],
-      username: 'test user'
+    axios.get('http://localhost:5000/users/')
+    .then(response =>{
+      if (response.data.length > 0){
+        this.setState({
+          users: response.data.map(user => user.username),
+          username: response.data[0].username
+        })
+      }
+    
     })
     }
 
@@ -33,11 +41,13 @@ class Comment extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const comment = {
+    const userComment = {
       username: this.state.username,
       comment: this.state.comment
     }
-    console.log(comment);
+
+    axios.post('http://localhost:5000/comments/add', userComment)
+    .then(res => console.log(res.data));
   }
 
 
@@ -45,7 +55,7 @@ class Comment extends Component {
     return (
       <div className="comment">
         <h3>add comment</h3>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <label> username: </label>
           <select 
           ref="userInput"
@@ -70,7 +80,7 @@ class Comment extends Component {
             id="comment"
             value={this.state.comment}
             onChange={this.onChangeComment} />
-            <button>add comment</button>
+            <button type="submit">add comment</button>
         </form>
         
       </div>
