@@ -25,14 +25,16 @@ const Comment = props => {
 class CommentView extends Component {
 
     constructor(props){
-        super();
+        super(props);
 
-        this.state = {comments: []}
+        this.state = {
+          comments: []
+        }
     }
 
     componentDidMount(){
         axios
-          .get("http://localhost5000/comments/")
+          .get("http://localhost:5000/comments/")
           .then((response) => {
             this.setState({ comments: response.data });
           })
