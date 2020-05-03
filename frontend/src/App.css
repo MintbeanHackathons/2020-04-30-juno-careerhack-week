@@ -82,3 +82,28 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .commentDetails td {
   padding: 0 10px;
 }
+
+/* profile styling */
+.profileDetails {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.profileDetails img {
+  width: 100%;
+  padding: 20px;
+}
+
+.profileDetails .imgContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.profileDetails h2, .profileDetails p, .profileDetails code {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
