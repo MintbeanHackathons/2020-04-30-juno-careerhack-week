@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
+
 
 class CommentEdit extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-      comment: "",
-      users: [],
-    };
+      username: '',
+      comment: '',
+      users: []
+    }
   }
 
   componentDidMount() {
@@ -24,11 +26,11 @@ class CommentEdit extends Component {
         console.log(error);
     }
 
-    axios.get("http://localhost:5000/users/").then((response) => {
+    axios.get("http://localhost:5000/users/")
+    .then((response) => {
       if (response.data.length > 0) {
         this.setState({
           users: response.data.map((user) => user.username),
-          username: response.data[0].username,
         });
       }
     });
@@ -87,11 +89,11 @@ class CommentEdit extends Component {
             value={this.state.comment}
             onChange={this.onChangeComment}
           />
-          <button type="submit">edit comment</button>
+          <button type="submit" value="edit comment">edit comment</button>
         </form>
       </div>
     );
   }
 }
 
-export default CommentEdit;
+export default withRouter(CommentEdit);

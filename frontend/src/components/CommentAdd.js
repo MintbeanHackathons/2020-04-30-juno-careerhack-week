@@ -22,7 +22,6 @@ class CommentAdd extends Component {
           username: response.data[0].username
         })
       }
-    
     })
     }
 

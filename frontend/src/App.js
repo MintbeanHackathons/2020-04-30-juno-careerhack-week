@@ -44,7 +44,7 @@ class App extends Component {
           />
           <CommentAdd />
           <CommentView />
-          {/* <CommentEdit /> */}
+          <CommentEdit />
         </div>
       </Router>
     );
