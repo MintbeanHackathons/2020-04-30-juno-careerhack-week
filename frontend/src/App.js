@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CommentAdd from './components/CommentAdd';
 import CommentView from './components/CommentView'
-import CommentEdit from './components/CommentEdit'
+// import CommentEdit from './components/CommentEdit'
 import Submit from './components/Submit';
 import Thread from './components/Thread';
 import Login from './components/Login';
