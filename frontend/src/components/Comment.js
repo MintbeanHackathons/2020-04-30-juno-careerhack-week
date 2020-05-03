@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Comment extends Component {
 
   constructor(props){
-    super();
+    super(props);
 
     this.state ={
       username: '',
@@ -14,7 +14,7 @@ class Comment extends Component {
 
   componentDidMount(){
     this.setState({
-      users: 'test user',
+      users: ['test user'],
       username: 'test user'
     })
     }
@@ -47,28 +47,30 @@ class Comment extends Component {
         <h3>add comment</h3>
         <form>
           <label> username: </label>
-          <select ref="userInput"
+          <select 
+          ref="userInput"
             required
             value = {this.state.username}
             onChange={this.onChangeUsername}>
-              {
-                this.state.users.map( (user) =>{
-                  return <option
-                  key={user}
-                  value={user}>{user}
-                  </option>
-                })
-              }
+              {this.state.users.map( (user) =>{
+                  return (
+                    <option 
+                    key={user} 
+                    value={user}>
+                      {user}
+                    </option>
+                  ); 
+                })} 
             </select>
 
             <label>Comment: </label>
-          <input 
-          type="textarea" 
-          name="comment" 
-          id="comment"
-          value={this.state.comment}
-          onChange={this.onChangeComment} />
-          <button>add comment</button>
+            <input 
+            type="textarea" 
+            name="comment" 
+            id="comment"
+            value={this.state.comment}
+            onChange={this.onChangeComment} />
+            <button>add comment</button>
         </form>
         
       </div>
