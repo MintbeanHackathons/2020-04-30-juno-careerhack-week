@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Comment = props => {
     return (
-      <tr>
-        <td>{props.comment.username}</td>
+      <tr className="commentDetails">
+        <td>{props.comment.username}: </td>
         <td>{props.comment.comment}</td>
         <td>
           <Link to={"/edit/" + props.comment._id}>edit</Link> |{" "}
@@ -60,8 +60,8 @@ class CommentView extends Component {
 
     render(){
         return (
-          <div>
-            <h2>comments</h2>
+          <div className="viewComments">
+            <h2>comments:</h2>
             <table className="table">
               <thread>
                 <tr>

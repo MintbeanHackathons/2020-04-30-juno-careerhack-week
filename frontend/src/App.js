@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import CommentAdd from './components/CommentAdd';
 import CommentView from './components/CommentView'
-// import CommentEdit from './components/CommentEdit'
+import CommentEdit from './components/CommentEdit'
 import Submit from './components/Submit';
 import Thread from './components/Thread';
-import Login from './components/Login';
 import './App.css';
 import NavBar from "./components/NavBar";
 import { Router, Route, Switch } from "react-router-dom";
@@ -28,12 +27,6 @@ class App extends Component {
             path="/submit"
             render={() => (
               <Submit />
-            )}
-          />
-          <Route
-            path="/login"
-            render={() => (
-              <Login />
             )}
           />
           <Route

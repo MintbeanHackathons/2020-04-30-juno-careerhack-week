@@ -14,7 +14,7 @@ const NavBar = () => {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to="/" exact>SHLC News (home)</NavLink>
+                        <NavLink to="/" exact>SHLCNews</NavLink>
                     </li>
                     <li>
                         <NavLink to="/thread">articles</NavLink>
