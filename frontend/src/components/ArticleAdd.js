@@ -44,61 +44,12 @@ class ArticleAdd extends Component {
     })
     }
 
-  onChangeUsername = (e) => {
-    this.setState({
-      username: e.target.value
-    });
-  }
-
-  onChangeComment = (e) => {
-    this.setState({
-      comment: e.target.value
-    });
-  }
-
-  onSubmit = (e) => {
-    e.preventDefault()
-    const userComment = {
-      username: this.state.username,
-      comment: this.state.comment
-    }
-
-    axios.post('http://localhost:5000/comments/add', userComment)
-    .then(res => console.log(res.data));
-  }
-
 
   render() {
     return (
-      <div className="comment">
-        <h3>add comment</h3>
-        <form onSubmit={this.onSubmit}>
-          <label> username: </label>
-          <select 
-          ref="userInput"
-            required
-            value = {this.state.username}
-            onChange={this.onChangeUsername}>
-              {this.state.users.map( (user) =>{
-                  return (
-                    <option 
-                    key={user} 
-                    value={user}>
-                      {user}
-                    </option>
-                  ); 
-                })} 
-            </select>
-
-            <label>Comment: </label>
-            <input 
-            type="textarea" 
-            name="comment" 
-            id="comment"
-            value={this.state.comment}
-            onChange={this.onChangeComment} />
-            <button type="submit">add comment</button>
-        </form>
+      <div className="articleContent">
+        <h3>Articles</h3>
+        
         
       </div>
     ); 
