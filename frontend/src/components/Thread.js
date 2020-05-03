@@ -120,10 +120,10 @@ class Thread extends Component {
             return (
               <li key={article.id}>
                 <a href={article.contentURL}>{article.title}</a>
-                <div className="comment-block">
+                {/* <div className="comment-block">
                   <h6>{`${article.comments.userName} ${article.comments.date}`}</h6>
                   <p>{article.comments.comment}</p>
-                </div>
+                </div> */}
                 {/* <ul>
                   {article.comments.map(comment => {
                     return (

@@ -32,12 +32,16 @@ class App extends Component {
           <Route
             path="/thread"
             render={() => (
-              <Thread />
+              <div> 
+                <Thread />
+                <CommentAdd />
+                <CommentView />
+              </div>
             )}
           />
           
-          <CommentAdd />
-          <Route path="/" component = {CommentView} />
+          <Route path ="/" exact component= {CommentAdd} />
+          <Route path="/" exact component = {CommentView} />
           <Route path="/edit/:id" component={CommentEdit} />
 
         </div>

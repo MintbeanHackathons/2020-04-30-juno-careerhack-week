@@ -26,6 +26,8 @@ class CommentView extends Component {
         }
     }
 
+
+
     componentDidMount(){
         axios
           .get("http://localhost:5000/comments/")
