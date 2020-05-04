@@ -8,9 +8,9 @@ const Comment = props => {
         <td>{props.comment.username}</td>
         <td>{props.comment.comment}</td>
         <td>
-            <Link to={"/edit/" + props.comment._id}>edit</Link> | <button onClick={() => { props.deleteComment(props.comment._id); }}>
+            <Link to={"/edit/" + props.comment._id}>edit</Link> | <a href="#" onClick={() => { props.deleteComment(props.comment._id); }}>
               delete
-          </button>
+          </a>
         </td>
       </tr>
     );   
@@ -40,10 +40,12 @@ class CommentView extends Component {
     deleteComment(id){
         axios.delete("http://localhost:5000/comments/"+id)
         .then(res => console.log(res.data));
-
-        this.setState({
-          comments: this.state.comments.filter(el => el._id !== id)
-        })
+        
+        const prevComments = [...this.state.comments];
+        const updatedComments = prevComments.filter((el) => el._id !== id);
+        this.setState(prevState => ({
+          comments: updatedComments
+        }));
     }
 
     // for every element in the comments array return a component ( a row of the table)
