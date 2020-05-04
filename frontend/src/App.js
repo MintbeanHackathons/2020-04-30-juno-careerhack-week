@@ -10,6 +10,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
+import UserAdd from './components/UserAdd';
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
             render={() => (
               <div>
                 <ArticleAdd />
+                <UserAdd />
                 <CommentAdd />
                 <CommentView />
               </div>
