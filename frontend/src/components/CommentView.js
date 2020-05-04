@@ -30,6 +30,7 @@ class CommentView extends Component {
         axios
           .get("http://localhost:5000/comments/")
           .then((response) => {
+            console.log(response.data);
             this.setState({ comments: response.data });
           })
           .catch((error) => {
@@ -37,7 +38,7 @@ class CommentView extends Component {
           });
     }
 
-    deleteComment(id){
+    deleteComment = (id) => {
         axios.delete("http://localhost:5000/comments/"+id)
         .then(res => console.log(res.data));
 
