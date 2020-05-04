@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CommentAdd from './components/CommentAdd';
 import CommentView from './components/CommentView'
 import CommentEdit from './components/CommentEdit'
-import Submit from './components/Submit';
+// import Submit from './components/Submit';
 import ArticleAdd from './components/ArticleAdd'
 import './App.css';
 import NavBar from "./components/NavBar";
@@ -26,13 +26,6 @@ class App extends Component {
               path="/profile" 
               component={Profile} />
           </Switch>
-
-          <Route
-            path="/submit"
-            render={() => (
-              <Submit />
-            )}
-          />
 
           <Route
             path="/" exact
