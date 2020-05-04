@@ -8,9 +8,9 @@ const Comment = props => {
         <td>{props.comment.username}: </td>
         <td>{props.comment.comment}</td>
         <td>
-            <Link to={"/edit/" + props.comment._id}>edit</Link> | <button onClick={() => { props.deleteComment(props.comment._id); }}>
+            <Link to={"/edit/" + props.comment._id}>edit</Link> | <a href="#" onClick={() => { props.deleteComment(props.comment._id); }}>
               delete
-          </button>
+          </a>
         </td>
       </tr>
     );   
@@ -38,6 +38,7 @@ class CommentView extends Component {
             console.log(error);
           });
     }
+
 
   deleteComment = (id) => {
     axios.delete("http://localhost:5000/comments/" + id)

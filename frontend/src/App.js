@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
 
+
 class App extends Component {
   render() {
     return (
@@ -44,12 +45,18 @@ class App extends Component {
               </div>
             )}
           />
+<<<<<<< HEAD
           
 
           <Route 
             path="/edit/:id" 
             component={CommentEdit} 
           />
+=======
+          <CommentAdd />
+          <Route path="/" component = {CommentView} />
+          <Route path="/edit/:id" component={CommentEdit} />
+>>>>>>> origin
 
         </div>
       </Router>

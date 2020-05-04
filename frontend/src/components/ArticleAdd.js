@@ -25,7 +25,7 @@ class ArticleAdd extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:5000/ArticleDB/')
+    axios.get('http://localhost:5000/articles/')
     .then(response =>{
       console.log(response);
       if (response.data.length > 0){
@@ -34,10 +34,10 @@ class ArticleAdd extends Component {
           title: response.data.map(article => article.title),
           author: response.data.map(article => article.author),
           contentURL: response.data.map(article => article.contentURL),
-          comment: [response.data.map(article => article.comment)],
-          userName: response.data.map(article => article.comment.userName),
-          entryDate: response.data.map(article => article.comment.date),
-          userComment: response.data.map(article => article.comment.comment)
+          // comment: [response.data.map(article => article.comment)],
+          // userName: response.data.map(article => article.comment.userName),
+          // entryDate: response.data.map(article => article.comment.date),
+          // userComment: response.data.map(article => article.comment.comment)
         })
       }
     
@@ -49,6 +49,18 @@ class ArticleAdd extends Component {
     return (
       <div className="articleContent">
         <h3>Articles</h3>
+<<<<<<< HEAD
+=======
+        <ol>
+          {this.state.articles.map((article) => {
+            return (
+              <li>
+                <a href={article.url}>{article.title}</a>
+              </li>
+            );
+          })}
+        </ol>
+>>>>>>> origin
       </div>
     ); 
   }
