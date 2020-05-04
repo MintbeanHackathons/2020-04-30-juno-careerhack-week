@@ -20,7 +20,7 @@ class Submit extends Component {
             <input type="textarea" name="text" id="text" />
           </div> */}
           <div className="submitButton">
-            <input type="submit" name="submit" id="submit" />
+            <button>submit</button>
           </div>
         </form>
       </div>

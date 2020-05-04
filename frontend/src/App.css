@@ -59,10 +59,18 @@ button {
 .submit form {
   display: flex;
   flex-direction: column;
+  padding-left: 10px;
 }
 
-.submit form .title, .submit form .url, .submit form .submitButton {
-  padding: 10px 10px;
+.submit form #title, .submit form #url, .submit form .submitButton {
+  padding: 10px 0;
+  margin: 10px;
+  border: none; 
+  border-radius: 5px;
+}
+
+.submit form .url label {
+  padding-right: 6px;
 }
 
 /* comment styling */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Comment = props => {
@@ -60,16 +60,16 @@ class CommentView extends Component {
           <div className="viewComments">
             <h2>comments:</h2>
             <table className="table">
-              <thread>
+              <thead>
                 <tr>
                   <th></th>
                   <th></th>
                 </tr>
-              </thread>
+              </thead>
+              <tbody>
+                  { this.commentList() }
+              </tbody>
             </table>
-            <body>
-                { this.commentList() }
-            </body>
           </div>
         );
     }
