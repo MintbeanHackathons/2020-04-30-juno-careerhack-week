@@ -31,9 +31,8 @@ auth0.clientCredentialsGrant(
         if (err) {
             // Handle error.
         }
-        // console.log(response);
+        console.log(response);
     }
 );
 
 console.log('hi');
-console.log(response);
