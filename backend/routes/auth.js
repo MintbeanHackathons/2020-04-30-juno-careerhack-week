@@ -1,3 +1,7 @@
+// auth endpoints
+const router = require('express').Router();
+let Auth = require("../models/auth.model");
+
 // to attach authentication routes to the application
 const { auth } = require('express-openid-connect');
 
@@ -27,3 +31,6 @@ const { requiresAuth } = require('express-openid-connect');
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(JSON.stringify(req.openid.user));
 });
+
+// need for all router files 
+module.exports = router;

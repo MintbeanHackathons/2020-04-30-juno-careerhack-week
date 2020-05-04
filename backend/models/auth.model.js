@@ -55,3 +55,7 @@ request(options, function (error, response, body) {
 
     console.log(body);
 });
+
+const Auth = mongoose.model('auth', authSchema);
+
+module.exports = Auth;
