@@ -30,7 +30,7 @@ class App extends Component {
           <Route
             path="/" exact
             render={() => (
-              <div>
+              <div className="content">
                 <ArticleAdd />
                 <UserAdd />
                 <CommentAdd />

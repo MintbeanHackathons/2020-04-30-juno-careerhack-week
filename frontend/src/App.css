@@ -10,6 +10,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .wrapper {
   max-width: 1080px;
+  margin: 0 auto;
 }
 
 a:focus {
@@ -83,6 +84,24 @@ input[type=submit] {
   border-bottom: 1px solid white;
 }
 
+.linkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content {
+  width: 40%;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 /* submit styling */
 
 .submit h2 {
@@ -93,6 +112,8 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit form #title, .submit form #url, .submit form .submitButton {
@@ -115,7 +136,7 @@ input[type=submit] {
 .comment form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   padding: 20px;
 }
 

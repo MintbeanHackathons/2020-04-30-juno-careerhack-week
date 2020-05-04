@@ -31,6 +31,12 @@ const NavBar = () => {
                     </li>
                 </ul>
             </nav>
+
+            <div className = "linkContainer">
+                <p className="links"><a href="https://youtu.be/0dcRlnB4FiA" target="_blank">Video Explanation</a></p>
+                <p className="links"><a href="https://github.com/teamSHL/2020-04-30-juno-careerhack-week-day-1-teamshl" target="_blank">Github Link</a></p>
+            </div>
+            
         </div>
     );
 };
