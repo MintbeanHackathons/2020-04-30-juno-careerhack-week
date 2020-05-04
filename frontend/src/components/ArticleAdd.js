@@ -49,8 +49,6 @@ class ArticleAdd extends Component {
     return (
       <div className="articleContent">
         <h3>Articles</h3>
-<<<<<<< HEAD
-=======
         <ol>
           {this.state.articles.map((article) => {
             return (
@@ -60,7 +58,6 @@ class ArticleAdd extends Component {
             );
           })}
         </ol>
->>>>>>> origin
       </div>
     ); 
   }

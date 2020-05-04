@@ -45,18 +45,10 @@ class App extends Component {
               </div>
             )}
           />
-<<<<<<< HEAD
-          
-
           <Route 
             path="/edit/:id" 
             component={CommentEdit} 
           />
-=======
-          <CommentAdd />
-          <Route path="/" component = {CommentView} />
-          <Route path="/edit/:id" component={CommentEdit} />
->>>>>>> origin
 
         </div>
       </Router>
