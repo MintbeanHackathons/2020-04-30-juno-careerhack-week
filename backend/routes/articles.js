@@ -14,7 +14,7 @@ router.route('/').get((req, res) =>{
 // POST request 
 router.route('/add').post((req, res) => {
     const articles = req.body.articles;
-    const newArticles = new Article({articles});
+    const newArticles = new Articles({articles});
 
     
 
