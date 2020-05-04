@@ -44,8 +44,12 @@ class CommentAdd extends Component {
       comment: this.state.comment
     }
 
-    axios.post('http://localhost:5000/comments/add', userComment)
-    .then(res => console.log(res.data));
+    axios
+      .post(
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/comments/add",
+        userComment
+      )
+      .then((res) => console.log(res.data));
 
     window.location = '/'
   }

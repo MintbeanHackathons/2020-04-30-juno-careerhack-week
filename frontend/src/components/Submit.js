@@ -33,10 +33,13 @@ class Submit extends Component {
       contentURL: this.state.contentURL,
     }
     
-    axios.post('http://localhost:5000/articles/add', newArticle)
-    .then(res => console.log(res.data));
+    axios
+      .post(
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/articles/add",
+        newArticle
+      )
+      .then((res) => console.log(res.data));
 
-    window.location = '/'
   }
 
   
