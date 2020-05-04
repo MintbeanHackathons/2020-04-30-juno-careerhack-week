@@ -21,7 +21,7 @@ class ArticleAdd extends Component {
       userComment: ""
     }
 
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   componentDidMount(){
@@ -30,11 +30,11 @@ class ArticleAdd extends Component {
       console.log(response);
       if (response.data.length > 0){
         this.setState({
-          articles: response.data
-          // comment: [response.data.map(article => article.comment)],
-          // userName: response.data.map(article => article.comment.userName),
-          // entryDate: response.data.map(article => article.comment.date),
-          // userComment: response.data.map(article => article.comment.comment)
+          articles: response.data,
+          comment: [response.data.map(article => article.comment)],
+          userName: response.data.map(article => article.comment.userName),
+          entryDate: response.data.map(article => article.comment.date),
+          userComment: response.data.map(article => article.comment.comment)
         })
       }
     
