@@ -30,10 +30,7 @@ class ArticleAdd extends Component {
       console.log(response);
       if (response.data.length > 0){
         this.setState({
-          id: response.data.map(article => article.id),
-          title: response.data.map(article => article.title),
-          author: response.data.map(article => article.author),
-          contentURL: response.data.map(article => article.contentURL),
+          articles: response.data
           // comment: [response.data.map(article => article.comment)],
           // userName: response.data.map(article => article.comment.userName),
           // entryDate: response.data.map(article => article.comment.date),
@@ -44,7 +41,6 @@ class ArticleAdd extends Component {
     })
     }
 
-
   render() {
     return (
       <div className="articleContent">
@@ -52,8 +48,9 @@ class ArticleAdd extends Component {
         <ol>
           {this.state.articles.map((article) => {
             return (
-              <li>
-                <a href={article.url}>{article.title}</a>
+              <li key={article._id}>
+                <a href={article.contentURL}>{article.title}</a>
+                {/* <p>Comment</p> */}
               </li>
             );
           })}

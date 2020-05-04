@@ -15,7 +15,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 button {
   background-color: #6e6a6f;
   border: none;
-  padding: 15px 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   color: white;
 }
@@ -71,17 +71,21 @@ button {
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: 0 auto;
+  padding: 20px;
 }
 
 .comment label, .comment select, .comment textarea {
   padding: 10px 0;
 }
 
+.comment textarea, .comment select {
+  border: none;
+  border-radius: 5px;
+}
+
 .comment form button {
-  width: 40%;
-  margin: 10px 0;
-  
+  width: 30%;
+  margin: 20px 0;
 }
 
 /* view comment styling */
@@ -132,6 +136,10 @@ button {
 
 .thread ol {
   color: #6E6A6F;
+}
+
+.thread h3 {
+  padding: 5px 30px 0;
 }
 
 
