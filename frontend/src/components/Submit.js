@@ -33,6 +33,8 @@ class Submit extends Component {
     
     axios.post('http://localhost:5000/articles/add', newArticle)
     .then(res => console.log(res.data));
+
+    window.location = '/'
   }
 
   
