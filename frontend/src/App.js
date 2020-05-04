@@ -3,7 +3,6 @@ import CommentAdd from './components/CommentAdd';
 import CommentView from './components/CommentView'
 import CommentEdit from './components/CommentEdit'
 import Submit from './components/Submit';
-import Thread from './components/Thread';
 import ArticleAdd from './components/ArticleAdd'
 import './App.css';
 import NavBar from "./components/NavBar";
@@ -38,7 +37,6 @@ class App extends Component {
             path="/" exact
             render={() => (
               <div>
-                <Thread />
                 <ArticleAdd />
                 <CommentAdd />
                 <CommentView />
