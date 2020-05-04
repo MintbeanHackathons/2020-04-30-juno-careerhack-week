@@ -8,6 +8,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 /*  base styling */
 
+.wrapper {
+  max-width: 1080px;
+}
+
 a:focus {
   outline: none;
   border: 2px solid #bfafa6;
@@ -66,9 +70,9 @@ input[type=submit] {
   list-style: none;
   text-decoration: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 
 .navigation li a {

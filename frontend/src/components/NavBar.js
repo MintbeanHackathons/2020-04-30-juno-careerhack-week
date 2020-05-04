@@ -11,13 +11,10 @@ const NavBar = () => {
 
     return (
         <div className="navigation">
-            <nav>
+            <nav className="wrapper">
                 <ul>
                     <li>
                         <NavLink to="/" exact>SHLCNews</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/submit">submit</NavLink>
                     </li>
                     <li>
                         <div className="loginButton">
