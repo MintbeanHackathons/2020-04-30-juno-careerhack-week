@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArticleAdd from './ArticleAdd';
 
 // hard coded an array to create basic logic for thread component, this array would be replaced with array from database
 const arrayOfArticles = [
@@ -12,6 +13,7 @@ class Thread extends Component {
     return (
       <div className="thread">
         <h3>Thread Component</h3>
+        <ArticleAdd />
         <ol>
           {arrayOfArticles.map(article => {
             return (

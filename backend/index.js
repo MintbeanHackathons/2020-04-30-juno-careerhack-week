@@ -30,10 +30,12 @@ connection.once('open', () => {
 // require route files 
 const commentRouter = require('./routes/comments');
 const userRouter = require('./routes/users');
+const articleRouter = require('./routes/articles');
 
 // use route files 
 app.use('/comments', commentRouter);
 app.use('/users', userRouter);
+app.use('/articles', articleRouter);
 
 
 // what starts the server on indicated port
