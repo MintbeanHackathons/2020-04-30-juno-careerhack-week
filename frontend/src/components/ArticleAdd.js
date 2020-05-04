@@ -55,6 +55,7 @@ class ArticleAdd extends Component {
             return (
               <li key={article._id}>
                 <a href={article.contentURL}>{article.title}</a>
+                {/* <p>Comment</p> */}
               </li>
             );
           })}
