@@ -54,10 +54,11 @@ class CommentAdd extends Component {
   render() {
     return (
       <div className="comment">
-        <h3>add comment</h3>
         <form onSubmit={this.onSubmit}>
-          <label> username: </label>
-          <select 
+          <label htmlFor="username"> username: </label>
+          <select
+          name="username"
+          id ="username"
           ref="userInput"
             required
             value = {this.state.username}
@@ -72,14 +73,8 @@ class CommentAdd extends Component {
                   ); 
                 })} 
             </select>
-
-            <label>Comment: </label>
-            <input 
-            type="textarea" 
-            name="comment" 
-            id="comment"
-            value={this.state.comment}
-            onChange={this.onChangeComment} />
+            <label htmlFor="comment">comment: </label>
+            <textarea name="comment" id="comment" value={this.state.comment} onChange={this.onChangeComment} rows="4" cols="50"> </textarea>
             <button type="submit">add comment</button>
         </form>
         

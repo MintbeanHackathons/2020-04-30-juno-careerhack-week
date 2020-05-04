@@ -4,7 +4,7 @@ import CommentView from './components/CommentView'
 import CommentEdit from './components/CommentEdit'
 import Submit from './components/Submit';
 import Thread from './components/Thread';
-import Login from './components/Login';
+import ArticleAdd from './components/ArticleAdd'
 import './App.css';
 import NavBar from "./components/NavBar";
 import { Router, Route, Switch } from "react-router-dom";
@@ -22,7 +22,9 @@ class App extends Component {
           
           <Switch>
             <Route path="/" exact />
-            <PrivateRoute path="/profile" component={Profile} />
+            <PrivateRoute 
+              path="/profile" 
+              component={Profile} />
           </Switch>
 
           <Route
@@ -31,21 +33,22 @@ class App extends Component {
               <Submit />
             )}
           />
+
           <Route
-            path="/login"
+            path="/" exact
             render={() => (
-              <Login />
+              <div>
+                <Thread />
+                <ArticleAdd />
+                <CommentAdd />
+                <CommentView />
+              </div>
             )}
           />
-          <Route
-            path="/thread"
-            render={() => (
-              <Thread />
-            )}
+          <Route 
+            path="/edit/:id" 
+            component={CommentEdit} 
           />
-          <CommentAdd />
-          <Route path="/" component = {CommentView} />
-          <Route path="/edit/:id" component={CommentEdit} />
 
         </div>
       </Router>
