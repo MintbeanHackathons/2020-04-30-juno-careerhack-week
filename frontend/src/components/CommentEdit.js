@@ -15,25 +15,29 @@ class CommentEdit extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:5000/comments/"+this.props.match.params.id)
-    .then(response => {
+    axios
+      .get(
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/comments/" +
+          this.props.match.params.id
+      )
+      .then((response) => {
         this.setState({
-            username: response.data.username,
-            comment: response.data.comment
-        })
-    })
-    .catch = (error) =>{
-        console.log(error);
-    }
-
-    axios.get("http://localhost:5000/users/")
-    .then((response) => {
-      if (response.data.length > 0) {
-        this.setState({
-          users: response.data.map((user) => user.username),
+          username: response.data.username,
+          comment: response.data.comment,
         });
-      }
-    });
+      }).catch = (error) => {
+      console.log(error);
+    };
+
+    axios
+      .get("http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/users/")
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map((user) => user.username),
+          });
+        }
+      });
   }
 
   onChangeUsername = (e) => {
@@ -56,7 +60,11 @@ class CommentEdit extends Component {
     };
 
     axios
-      .post("http://localhost:5000/comments/update/"+this.props.match.params.id, userComment)
+      .post(
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/comments/update/" +
+          this.props.match.params.id,
+        userComment
+      )
       .then((res) => console.log(res.data));
 
     window.location = '/'
