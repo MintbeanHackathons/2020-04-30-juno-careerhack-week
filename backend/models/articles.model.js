@@ -4,28 +4,28 @@ const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
     id: {
-        type: number,
+        type: Number,
         required: true,
         unique: true,
         trim: true,
         minlength: 1
     },
     title: {
-        type: string,
+        type: String,
         required: true,
         unique: true,
         trim: true,
         minlength: 1
     },
     author: {
-        type: string,
+        type: String,
         required: true,
         unique: true,
         trim: true,
         minlength: 1
     },
     contentURL: {
-        type: string,
+        type: String,
         required: true,
         unique: true,
         trim: true,
@@ -33,21 +33,21 @@ const articleSchema = new Schema({
     },
     comments: {
         userName: {
-            type: string,
+            type: String,
             required: true,
             unique: true,
             trim: true,
             minlength: 3
         },
         date: {
-            type: number,
+            type: Number,
             required: true,
             unique: true,
             trim: true,
             minlength: 3
         },
         comment: {
-            type: string,
+            type: String,
             required: true,
             unique: true,
             trim: true,
