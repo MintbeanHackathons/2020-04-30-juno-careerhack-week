@@ -43,7 +43,7 @@ class ArticleAdd extends Component {
 
   render() {
     return (
-      <div className="articleContent">
+      <div className="thread">
         <h3>Articles</h3>
         <ol>
           {this.state.articles.map((article) => {
