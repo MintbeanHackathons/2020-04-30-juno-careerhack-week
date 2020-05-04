@@ -17,7 +17,7 @@ class CommentEdit extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/comments/" +
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/" +
           this.props.match.params.id
       )
       .then((response) => {
@@ -30,7 +30,7 @@ class CommentEdit extends Component {
     };
 
     axios
-      .get("http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/users/")
+      .get("http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/users/")
       .then((response) => {
         if (response.data.length > 0) {
           this.setState({
@@ -61,7 +61,7 @@ class CommentEdit extends Component {
 
     axios
       .post(
-        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/comments/update/" +
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/update/" +
           this.props.match.params.id,
         userComment
       )
