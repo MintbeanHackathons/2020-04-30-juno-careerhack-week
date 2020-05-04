@@ -60,7 +60,7 @@ class Submit extends Component {
             onChange={this.onChangeUrl}/>
           </div>
           <div className="submitButton">
-            <button>submit</button>
+            <input type="submit" value="submit"/>
           </div>
         </form>
       </div>
