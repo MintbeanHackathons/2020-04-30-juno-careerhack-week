@@ -25,20 +25,20 @@ class ArticleAdd extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:5000/articles/')
-    .then(response =>{
-      console.log(response);
-      if (response.data.length > 0){
-        this.setState({
-          articles: response.data
-          // comment: [response.data.map(article => article.comment)],
-          // userName: response.data.map(article => article.comment.userName),
-          // entryDate: response.data.map(article => article.comment.date),
-          // userComment: response.data.map(article => article.comment.comment)
-        })
-      }
-    
-    })
+    axios
+      .get("http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/articles/")
+      .then((response) => {
+        console.log(response);
+        if (response.data.length > 0) {
+          this.setState({
+            articles: response.data,
+            // comment: [response.data.map(article => article.comment)],
+            // userName: response.data.map(article => article.comment.userName),
+            // entryDate: response.data.map(article => article.comment.date),
+            // userComment: response.data.map(article => article.comment.comment)
+          });
+        }
+      });
     }
 
   render() {
