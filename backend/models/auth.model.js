@@ -6,13 +6,13 @@ var management = new ManagementClient({
     telemetry: false
 });
 
-// var ManagementClient = require('auth0').ManagementClient;
-// var auth0 = new ManagementClient({
-//     domain: 'telemetry: false.auth0.com',
-//     clientId: '4kvRt5o3FeRYnutfa6mWICnf2ie9AZkg',
-//     clientSecret: 'SBwT7_8twDdob9s6N0YMp1yDMlINcSIFeCzQGfYmenoB8dN2DlFJMoNpVx2ZVcDN',
-//     scope: 'read:users update:users'
-// });
+var ManagementClient = require('auth0').ManagementClient;
+var auth0 = new ManagementClient({
+    domain: 'telemetry: false.auth0.com',
+    clientId: '4kvRt5o3FeRYnutfa6mWICnf2ie9AZkg',
+    clientSecret: 'SBwT7_8twDdob9s6N0YMp1yDMlINcSIFeCzQGfYmenoB8dN2DlFJMoNpVx2ZVcDN',
+    scope: 'read:users update:users'
+});
 
 var AuthenticationClient = require('auth0').AuthenticationClient;
 
@@ -31,9 +31,31 @@ auth0.clientCredentialsGrant(
         if (err) {
             // Handle error.
         }
-        // console.log(response);
+        // console.log(response.access_token);
     }
 );
 
 console.log('hi');
-console.log(response);
+console.log(response.access_token);
+
+
+var request = require("request");
+
+var options = {
+    method: 'GET',
+    url: 'https://dev-sun3mq0i.auth0.com/api/v2/clients',
+    headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5ESTFNa05DTVRGQlJrVTRORVF6UXpFMk1qZEVNVVEzT1VORk5ESTVSVU5GUXpnM1FrRTFNdyJ9.eyJpc3MiOiJodHRwczovL2RlbW8tYWNjb3VudC5hdXRoMC5jb20vIiwic3ViIjoib9O7eVBnMmd4VGdMNjkxTnNXY2RUOEJ1SmMwS2NZSEVAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vZGVtby1hY2NvdW50LmF1dGgwLmNvbS9hcGkvdjIvIiwiZXhwIjoxNDg3MDg2Mjg5LCJpYXQiOjE5ODY5OTk4ODksInNjb3BlIjoicmVhZDpjbGllbnRzIGNyZWF0ZTpjbGllbnRzIHJlYWQ6Y2xpZW50X2tleXMifQ.oKTT_cEA_U6hVzNYPCl_4-SnEXXvFSOMJbZyFydQDPml2KqBxVw_UPAXhjgtW8Kifc_b2HQ4jFh7nH0KC_j1XjfEJPvwFZgqfI_ILzO3DPfpEIK_n_aX-Tz4okbZe6nj2aT_qLpHimLxK50jOGaMuzp4a1djHJTj5q-NbIiPW8AJowS2-gveP4T3dyyegUsZkmTNwrreqppPApmpWWE-wVsxnVsI_FZFrHnq0rn7lmY_Iz6vyiZjaKrd2C3hFm0zFGTn8FslBfHUldTcDNzOKOpCq7HFMeU0urXBXDetrzkW1afxIqED3G2C51JEV-4nTRYUinnWgXJfLJ87G3ge_A'
+    }
+};
+
+request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    console.log(body);
+});
+
+const Auth = mongoose.model('auth', authSchema);
+
+module.exports = Auth;
