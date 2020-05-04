@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
 
+
 class App extends Component {
   render() {
     return (
@@ -42,7 +43,6 @@ class App extends Component {
               <Thread />
             )}
           />
-          
           <CommentAdd />
           <Route path="/" component = {CommentView} />
           <Route path="/edit/:id" component={CommentEdit} />
