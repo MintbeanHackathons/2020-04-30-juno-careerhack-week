@@ -30,7 +30,6 @@ class CommentView extends Component {
         axios
           .get("http://localhost:5000/comments/")
           .then((response) => {
-            console.log(response.data);
             this.setState({ comments: response.data });
           })
           .catch((error) => {
