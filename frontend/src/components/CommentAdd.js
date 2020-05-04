@@ -23,7 +23,7 @@ class CommentAdd extends Component {
         })
       }
     })
-    }
+  }
 
   onChangeUsername = (e) => {
     this.setState({
@@ -59,7 +59,7 @@ class CommentAdd extends Component {
     return (
       <div className="comment">
         <form onSubmit={this.onSubmit}>
-          <label htmlFor="username"> username: </label>
+          <label htmlFor="username"> select your username: </label>
           <select
           name="username"
           id ="username"

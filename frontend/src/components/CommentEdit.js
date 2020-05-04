@@ -74,7 +74,7 @@ class CommentEdit extends Component {
   render() {
     return (
       <div className="comment">
-        <h3>edit comment</h3>
+        <h3>edit comment:</h3>
         <form onSubmit={this.onSubmit}>
           <label> username: </label>
           <select
