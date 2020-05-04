@@ -8,6 +8,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 /*  base styling */
 
+a:focus {
+  outline: none;
+  border: 2px solid #bfafa6;
+}
+
 .App {
   color: black;
 }
@@ -18,6 +23,10 @@ button {
   padding: 5px 10px;
   border-radius: 5px;
   color: white;
+}
+
+button:focus {
+  border: 2px solid #bfafa6;
 }
 
 .loginButton button {
@@ -59,10 +68,22 @@ button {
 .submit form {
   display: flex;
   flex-direction: column;
+  padding-left: 10px;
 }
 
-.submit form .title, .submit form .url, .submit form .submitButton {
-  padding: 10px 10px;
+.submit form #title, .submit form #url, .submit form .submitButton {
+  padding: 10px 0;
+  margin: 10px;
+  border: none; 
+  border-radius: 5px;
+}
+
+.submit form #title:focus, .submit form #url:focus {
+  border: 2px solid #bfafa6;
+}
+
+.submit form .url label {
+  padding-right: 6px;
 }
 
 /* comment styling */
@@ -81,6 +102,10 @@ button {
 .comment textarea, .comment select {
   border: none;
   border-radius: 5px;
+}
+
+.comment textarea:focus, .comment select:focus {
+  border: 2px solid #bfafa6
 }
 
 .comment form button {
