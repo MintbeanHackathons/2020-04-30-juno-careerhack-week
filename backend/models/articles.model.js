@@ -3,13 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-    id: {
-        type: Number,
-        required: true,
-        unique: true,
-        trim: true,
-        minlength: 1
-    },
     title: {
         type: String,
         required: true,
@@ -30,34 +23,11 @@ const articleSchema = new Schema({
         unique: true,
         trim: true,
         minlength: 1
-    },
-    comments: {
-        userName: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true,
-            minlength: 3
-        },
-        date: {
-            type: Number,
-            required: true,
-            unique: true,
-            trim: true,
-            minlength: 3
-        },
-        comment: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true,
-            minlength: 3
-        }
-    },
+    }
 }, {
     timestamps: true,
 });
 
-const Articles = mongoose.model('articles', articleSchema);
+const Articles = mongoose.model('Articles', articleSchema);
 
 module.exports = Articles;
