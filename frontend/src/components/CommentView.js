@@ -39,7 +39,7 @@ class CommentView extends Component {
           });
     }
 
-    deleteComment(id){
+    deleteComment = (id) => {
         axios.delete("http://localhost:5000/comments/"+id)
         .then(res => console.log(res.data));
 

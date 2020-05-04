@@ -4,6 +4,7 @@ import CommentView from './components/CommentView'
 import CommentEdit from './components/CommentEdit'
 import Submit from './components/Submit';
 import Thread from './components/Thread';
+import ArticleAdd from './components/ArticleAdd';
 import './App.css';
 import NavBar from "./components/NavBar";
 import { Router, Route, Switch } from "react-router-dom";
@@ -34,6 +35,7 @@ class App extends Component {
             render={() => (
               <div> 
                 <Thread />
+                <ArticleAdd />
                 <CommentAdd />
                 <CommentView />
               </div>
