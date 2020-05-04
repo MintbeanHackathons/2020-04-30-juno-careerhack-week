@@ -38,8 +38,8 @@ class UserAdd extends Component {
 
   render(){
       return(
-          <div>
-              <h3>enter user name</h3>
+          <div className="addUser">
+              <h3>enter username:</h3>
               <form onSubmit={this.onSubmit}>
                   <label>username: </label>
                   <input type="text"
