@@ -28,7 +28,7 @@ class UserAdd extends Component {
 
     axios
       .post(
-        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com/users/add",
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/users/add",
         user
       )
       .then((res) => console.log(res.data));

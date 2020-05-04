@@ -31,9 +31,10 @@ class CommentView extends Component {
     componentDidMount(){
         axios
           .get(
-            "https://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/"
+            "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/"
           )
           .then((response) => {
+            console.log('comment', response);
             this.setState({ comments: response.data });
           })
           .catch((error) => {
@@ -43,7 +44,7 @@ class CommentView extends Component {
 
 
   deleteComment = (id) => {
-    axios.delete("https://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/" + id)
+    axios.delete("http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/" + id)
       .then(res => console.log(res.data));
     this.setState({
       comments: this.state.comments.filter(el => el._id !== id)

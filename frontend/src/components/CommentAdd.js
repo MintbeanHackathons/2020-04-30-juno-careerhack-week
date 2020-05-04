@@ -14,7 +14,7 @@ class CommentAdd extends Component {
   }
 
   componentDidMount(){
-    axios.get('https://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/users/')
+    axios.get('http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/users/')
     .then(response =>{
       if (response.data.length > 0){
         this.setState({
@@ -46,7 +46,7 @@ class CommentAdd extends Component {
 
     axios
       .post(
-        "https://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/add",
+        "http://ec2-3-15-40-216.us-east-2.compute.amazonaws.com:5000/comments/add",
         userComment
       )
       .then((res) => console.log(res.data));
