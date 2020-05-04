@@ -14,10 +14,12 @@ router.route('/').get((req, res) =>{
 // POST request 
 router.route('/add').post((req, res) => {
     const articles = req.body.articles;
-    const newArticles = new Article({article});
+    const newArticles = new Article({articles});
+
+    
 
     // .save method saves to database
-    newArticle.save()
+    newArticles.save()
     .then(() => res.json('Article added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
