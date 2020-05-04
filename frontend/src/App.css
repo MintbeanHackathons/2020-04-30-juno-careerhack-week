@@ -31,8 +31,12 @@ button:focus {
 
 .loginButton button {
   background-color: #6C698D;
-  padding: 0 100px 0 0;
   margin: 0;
+}
+
+.loginButton button:hover {
+  border-bottom: 1px solid white;
+  border-radius: 0px;
 }
 
 
@@ -40,6 +44,10 @@ button:focus {
 
 .navigation {
   background-color: #6C698D;
+}
+
+.loginButton span {
+  color: white;
 }
 
 .navigation a {
@@ -57,6 +65,10 @@ button:focus {
 
 .navigation li a {
   text-decoration: none;
+}
+
+.navigation li a:hover {
+  border-bottom: 1px solid white;
 }
 
 /* submit styling */

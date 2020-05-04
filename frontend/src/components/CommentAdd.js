@@ -23,7 +23,7 @@ class CommentAdd extends Component {
         })
       }
     })
-    }
+  }
 
   onChangeUsername = (e) => {
     this.setState({
