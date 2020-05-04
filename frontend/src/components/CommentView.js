@@ -39,14 +39,13 @@ class CommentView extends Component {
           });
     }
 
-    deleteComment = (id) => {
-        axios.delete("http://localhost:5000/comments/"+id)
-        .then(res => console.log(res.data));
-
-        this.setState({
-          comments: this.state.comments.filter(el => el._id !== id)
-        })
-    }
+  deleteComment = (id) => {
+    axios.delete("http://localhost:5000/comments/" + id)
+      .then(res => console.log(res.data));
+    this.setState({
+      comments: this.state.comments.filter(el => el._id !== id)
+    })
+  }
 
     // for every element in the comments array return a component ( a row of the table)
     commentList(){
