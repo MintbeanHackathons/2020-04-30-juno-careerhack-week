@@ -8,7 +8,8 @@ class Submit extends Component {
     super();
     this.state = {
       title: '',
-      url: '',
+      author: '',
+      contentURL: '',
     }
   }
 
@@ -20,7 +21,7 @@ class Submit extends Component {
 
   onChangeUrl = (e) => {
     this.setState ({
-      url: e.target.value
+      contentURL: e.target.value
     });
   }
 
@@ -28,7 +29,8 @@ class Submit extends Component {
     e.preventDefault()
     const newArticle = {
       title: this.state.title,
-      url: this.state.url
+      author: this.state.author,
+      contentURL: this.state.contentURL,
     }
     
     axios.post('http://localhost:5000/articles/add', newArticle)
