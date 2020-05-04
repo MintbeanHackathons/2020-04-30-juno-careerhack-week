@@ -6,7 +6,36 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
+/*  base styling */
+
+.App {
+  color: black;
+}
+
+button {
+  background-color: #6e6a6f;
+  border: none;
+  padding: 15px 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.loginButton button {
+  background-color: #6C698D;
+  padding: 0 100px 0 0;
+  margin: 0;
+}
+
+
 /* nav styling */
+
+.navigation {
+  background-color: #6C698D;
+}
+
+.navigation a {
+  color: white;
+}
 
 .navigation ul {
   list-style: none;
@@ -14,7 +43,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   display: flex;
   justify-content: space-evenly;
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .navigation li a {
@@ -23,7 +52,87 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 /* submit styling */
 
+.submit h2 {
+  padding: 0 10px;
+}
+
 .submit form {
   display: flex;
   flex-direction: column;
 }
+
+.submit form .title, .submit form .url, .submit form .submitButton {
+  padding: 10px 10px;
+}
+
+/* comment styling */
+
+.comment form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.comment label, .comment select, .comment textarea {
+  padding: 10px 0;
+}
+
+.comment form button {
+  width: 40%;
+  margin: 10px 0;
+  
+}
+
+/* view comment styling */
+.viewComments {
+  padding: 0 10px;
+}
+
+.table th {
+  padding-right: 10px;
+}
+
+.commentDetails td {
+  padding: 0 10px;
+}
+
+/* profile styling */
+.profileDetails {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.profileDetails img {
+  width: 100%;
+  padding: 20px;
+}
+
+.profileDetails .imgContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.profileDetails h2, .profileDetails p, .profileDetails code {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* article thread styling */
+.thread a {
+  text-decoration: none;
+  color: black;
+}
+
+.thread li {
+  padding: 5px; 
+}
+
+.thread ol {
+  color: #6E6A6F;
+}
+
+
+
