@@ -2,6 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+// at the top of the file
+const path = require('path');
+
+
 // configures environment variables into the dotenv file
 require('dotenv').config();
 
@@ -15,7 +19,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // register the ./public folder as the static assets directory
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // express needs this in order to be able to parse JSON bodies
 app.use(bodyParser());
@@ -37,6 +41,11 @@ app.use('/comments', commentRouter);
 app.use('/users', userRouter);
 app.use('/articles', articleRouter);
 
+let publicpath = path.join(__dirname, 'public');
+console.log(publicpath);
+
+//after all your other routes...
+app.use('/', express.static(publicpath));
 
 // what starts the server on indicated port
 const listener = app.listen(5000, () => {
