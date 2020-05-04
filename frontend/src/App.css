@@ -12,6 +12,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   color: black;
 }
 
+button {
+  background-color: #6e6a6f;
+  border: none;
+  padding: 15px 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.loginButton button {
+  background-color: #6C698D;
+  padding: 0 100px 0 0;
+  margin: 0;
+}
+
 
 /* nav styling */
 
@@ -29,7 +43,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   display: flex;
   justify-content: space-evenly;
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .navigation li a {
@@ -105,5 +119,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   margin: 0 auto;
   padding: 10px;
 }
+
+/* article thread styling */
+.thread a {
+  text-decoration: none;
+  color: black;
+}
+
+.thread li {
+  padding: 5px; 
+}
+
+.thread ol {
+  color: #6E6A6F;
+}
+
 
 

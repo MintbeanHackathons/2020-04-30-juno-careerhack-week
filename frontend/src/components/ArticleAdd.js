@@ -49,8 +49,6 @@ class ArticleAdd extends Component {
     return (
       <div className="articleContent">
         <h3>Articles</h3>
-        
-        
       </div>
     ); 
   }

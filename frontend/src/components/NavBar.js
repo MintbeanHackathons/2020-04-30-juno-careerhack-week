@@ -17,20 +17,17 @@ const NavBar = () => {
                         <NavLink to="/" exact>SHLCNews</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/thread">articles</NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/submit">submit</NavLink>
                     </li>
                     <li>
-                        <div>
+                        <div className="loginButton">
                             {!isAuthenticated && (
-                                <button onClick={() => loginWithRedirect({})}>Log in</button>
+                                <button onClick={() => loginWithRedirect({})}>log in</button>
                             )}
-                            {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+                            {isAuthenticated && <button onClick={() => logout()}>log out</button>}
                             {isAuthenticated && (
                                 <span>
-                                    <Link to="/profile">Profile</Link>
+                                    <Link to="/profile">profile</Link>
                                 </span>
                             )}
                         </div>
