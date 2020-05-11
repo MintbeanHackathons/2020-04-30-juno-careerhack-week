@@ -1,0 +1,212 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+/*  base styling */
+
+.wrapper {
+  max-width: 1080px;
+}
+
+a:focus {
+  outline: none;
+  border: 2px solid #bfafa6;
+}
+
+.App {
+  color: black;
+}
+
+button {
+  background-color: #6e6a6f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+button:focus {
+  border: 2px solid #bfafa6;
+}
+
+.loginButton button {
+  background-color: #6C698D;
+  margin: 0;
+}
+
+.loginButton button:hover {
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+}
+
+input[type=submit] {
+  background-color: #6e6a6f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white
+}
+
+
+/* nav styling */
+
+.navigation {
+  background-color: #6C698D;
+}
+
+.loginButton span {
+  color: white;
+}
+
+.navigation a {
+  color: white;
+}
+
+.navigation ul {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 20px 20px;
+}
+
+.navigation li a {
+  text-decoration: none;
+}
+
+.navigation li a:hover {
+  border-bottom: 1px solid white;
+}
+
+/* submit styling */
+
+.submit h2 {
+  padding: 0 10px;
+}
+
+.submit form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.submit form #title, .submit form #url, .submit form .submitButton {
+  padding: 10px 0;
+  margin: 10px;
+  border: none; 
+  border-radius: 5px;
+}
+
+.submit form #title:focus, .submit form #url:focus {
+  border: 2px solid #bfafa6;
+}
+
+.submit form .url label {
+  padding-right: 6px;
+}
+
+/* comment styling */
+
+.comment form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+}
+
+.comment label, .comment select, .comment textarea {
+  padding: 10px 0;
+}
+
+.comment textarea, .comment select {
+  border: none;
+  border-radius: 5px;
+}
+
+.comment textarea:focus, .comment select:focus {
+  border: 2px solid #bfafa6
+}
+
+.comment form button {
+  width: 30%;
+  margin: 20px 0;
+}
+
+.comment h3 {
+  padding-left: 20px;
+}
+
+/* view comment styling */
+.viewComments {
+  padding: 0 10px;
+}
+
+.table th {
+  padding-right: 10px;
+}
+
+.commentDetails td {
+  padding: 0 10px;
+}
+
+/* profile styling */
+.profileDetails {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.profileDetails img {
+  width: 100%;
+  padding: 20px;
+}
+
+.profileDetails .imgContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.profileDetails h2, .profileDetails p, .profileDetails code {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* article thread styling */
+.thread a {
+  text-decoration: none;
+  color: black;
+}
+
+.thread li {
+  padding: 5px; 
+}
+
+.thread ol {
+  color: #6E6A6F;
+}
+
+.thread h3 {
+  padding: 5px 30px 0;
+}
+
+/* add user styling */
+.addUser h3 {
+  padding-left: 20px;
+}
+
+.addUser form {
+  padding-left: 20px;
+}
+
+.addUser input[type=text] {
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}

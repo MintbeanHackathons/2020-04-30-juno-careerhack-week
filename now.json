@@ -1,0 +1,7 @@
+{
+    "name": "2020-04-30-juno-careerhack-week-day-1-teamshl",
+    "version": 2,
+    "env": {
+        "MONGODB_URI": "@my-mongodb-uri"
+    }
+}
